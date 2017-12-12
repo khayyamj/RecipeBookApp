@@ -1,0 +1,8 @@
+{
+  "name": "RecipeBook",
+  "app_id": "a5630ea4",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
