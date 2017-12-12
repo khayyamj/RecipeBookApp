@@ -13,5 +13,21 @@
 
 
 <ion-content padding>
+  <ion-card *ngFor="let recipe of recipeList">
+    <ion-card-header>
+      {{ recipe.title }}
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <p>{{ recipe.description }}</p>
+      </ion-item>
+      <ion-list>
+        <ion-label>Ingredients</ion-label>
+        <ion-item *ngFor="let ingredient of recipe.ingredients">
+          {{ ingredient.name }} ({{ ingredient.amount }})
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
 
 </ion-content>
