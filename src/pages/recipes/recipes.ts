@@ -4,6 +4,7 @@ import { NavController } from 'ionic-angular';
 import { EditRecipePage } from './../edit-recipe/edit-recipe';
 import { Recipe } from '../../models/recipe';
 import { RecipeService } from '../../services/recipe-list';
+import { RecipePage } from '../recipe/recipe';
 
 @Component({
   selector: 'page-recipes',
@@ -18,12 +19,17 @@ export class RecipesPage implements OnInit{
     this.getRecipeList();
   }
 
-  ionViewDidEnter(){
+  ionViewWillEnter(){
     this.getRecipeList();
   }
 
   onNewRecipe() {
     this.navCtrl.push(EditRecipePage, {mode: 'New'});
+  }
+
+  onLoadRecipe(recipe: Recipe, index: number) {
+    const selectedRecipe = this.recipeList[index];
+    this.navCtrl.push(RecipePage, {recipe: selectedRecipe, index: index});
   }
 
   private getRecipeList() {
