@@ -12,6 +12,7 @@ import { ShoppingListPage } from './../pages/shopping-list/shopping-list';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { ShoppingListService } from '../services/shopping-list';
+import { RecipeService } from '../services/recipe-list';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { ShoppingListService } from '../services/shopping-list';
   ],
   providers: [
     ShoppingListService,
+    RecipeService,
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
